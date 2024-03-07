@@ -1,6 +1,7 @@
 package cc.givemefox
 
 import android.annotation.SuppressLint
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.os.StrictMode
 import android.widget.Toast
@@ -8,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity
 import cc.givemefox.databinding.ActivityMainBinding
 import cc.givemefox.result.Err
 import cc.givemefox.result.Ok
+import java.net.URL
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -29,6 +32,10 @@ class MainActivity : AppCompatActivity() {
             when (val result = ah.getWeather(input)) {
                 is Ok -> {
                     val response = result.value
+
+                    val url = URL("https://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png")
+                    val bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream())
+                    binding.image.setImageBitmap(bmp)
 
                     binding.main.text = "Main:"
                     binding.mainTemp.text = "   Temp: ${response.main.temp}°C"
