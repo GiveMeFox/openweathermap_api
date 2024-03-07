@@ -33,19 +33,20 @@ class MainActivity : AppCompatActivity() {
                 is Ok -> {
                     val response = result.value
 
-                    val url = URL("https://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png")
+                    val url = URL("https://openweathermap.org/img/wn/${response.weather[0].icon}@4x.png")
                     val bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream())
                     binding.image.setImageBitmap(bmp)
 
-                    binding.main.text = "Main:"
-                    binding.mainTemp.text = "   Temp: ${response.main.temp}°C"
-                    binding.mainFeelsLike.text = "   Feels like: ${response.main.feels_like}°C"
-                    binding.mainTempMin.text = "   Temp min: ${response.main.temp_min}°C"
-                    binding.mainTempMax.text = "   Temp max: ${response.main.temp_max}°C"
-                    binding.mainPressure.text = "   Pressure: ${response.main.pressure}hPa"
-                    binding.mainHumidity.text = "   Humidity: ${response.main.humidity}%"
-                    binding.mainSeaLevel.text = "   Sea level: ${response.main.sea_level}"
-                    binding.mainGrndLevel.text = "   Grnd level: ${response.main.grnd_level}"
+                    binding.header.text = "The Weather in ${response.name}"
+
+                    binding.mainTemp.text = "Temp: ${response.main.temp}°C"
+                    binding.mainFeelsLike.text = "Feels like: ${response.main.feels_like}°C"
+                    binding.mainTempMin.text = "Temp min: ${response.main.temp_min}°C"
+                    binding.mainTempMax.text = "Temp max: ${response.main.temp_max}°C"
+                    binding.mainPressure.text = "Pressure: ${response.main.pressure}hPa"
+                    binding.mainHumidity.text = "Humidity: ${response.main.humidity}%"
+                    binding.mainSeaLevel.text = "Sea level: ${response.main.sea_level}"
+                    binding.mainGrndLevel.text = "Grnd level: ${response.main.grnd_level}"
 
                     binding.visibility.text = "Visibility: ${response.visibility}"
                     binding.wind.text = "Wind: ${response.wind}"

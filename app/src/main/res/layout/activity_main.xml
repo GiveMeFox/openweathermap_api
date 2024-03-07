@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,8 +10,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -29,17 +35,14 @@
                 android:id="@+id/buttonGetWeather"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/get_weather" />
+                app:icon="@android:drawable/ic_search_category_default" />
 
         </LinearLayout>
 
         <ImageView
             android:id="@id/image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:id="@+id/main"
+            android:layout_gravity="center"
+            android:scaleType="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
@@ -49,75 +52,89 @@
             android:orientation="vertical"
             >
             <TextView
+                android:textAlignment="center"
                 android:id="@+id/mainTemp"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
             <TextView
+                android:textAlignment="center"
                 android:id="@+id/mainFeelsLike"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
             <TextView
+                android:textAlignment="center"
                 android:id="@+id/mainTempMin"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
             <TextView
+                android:textAlignment="center"
                 android:id="@+id/mainTempMax"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
             <TextView
+                android:textAlignment="center"
                 android:id="@+id/mainPressure"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
             <TextView
+                android:textAlignment="center"
                 android:id="@+id/mainHumidity"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
             <TextView
+                android:textAlignment="center"
                 android:id="@+id/mainSeaLevel"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
             <TextView
+                android:textAlignment="center"
                 android:id="@+id/mainGrndLevel"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
         </LinearLayout>
 
         <TextView
+            android:textAlignment="center"
             android:id="@+id/visibility"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <TextView
+            android:textAlignment="center"
             android:id="@+id/wind"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <TextView
+            android:textAlignment="center"
             android:id="@+id/rain"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <TextView
+            android:textAlignment="center"
             android:id="@+id/snow"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <TextView
+            android:textAlignment="center"
             android:id="@+id/clouds"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <TextView
+            android:textAlignment="center"
             android:id="@+id/name"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
     </LinearLayout>

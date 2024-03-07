@@ -82,7 +82,7 @@ class ApiHandler {
         if (town.isEmpty() || town.isBlank()) return Err("Town name cannot be empty")
 
         val apiKey = "API_KEY"
-        val url = "https://api.openweathermap.org/data/2.5/weather?q=$town&appid=$apiKey&lang=pl&unit=metric"
+        val url = "https://api.openweathermap.org/data/2.5/weather?q=$town&appid=$apiKey&lang=pl&units=metric"
 
         val client = OkHttpClient()
         val response = client.newCall(Request.Builder().url(url).build()).execute()
